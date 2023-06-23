@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Đăng nhập</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 100px;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .container p {
+      text-align: center;
+    }
+
+    .container p a {
+      color: #0000FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Đăng nhập</h2>
+    <form id="loginForm">
+      <input type="text" placeholder="Tên đăng nhập" id="username" required>
+      <input type="password" placeholder="Mật khẩu" id="password" required>
+      <input type="submit" value="Đăng nhập">
+    </form>
+    <p>Nếu chưa có tài khoản, <a href="#">đăng ký tại đây</a>.</p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Ngăn form gửi dữ liệu đi
+
+      // Lấy giá trị từ các trường input
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Kiểm tra thông tin đăng nhập
+      if (username === "admin" && password === "admin123") {
+        alert("Đăng nhập thành công!");
+        // Thực hiện các hành động khác sau khi đăng nhập thành công
+      } else {
+        alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+      }
+    });
+  </script>
+</body>
+</html>
